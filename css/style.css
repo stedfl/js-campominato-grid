@@ -4,25 +4,47 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color:darkcyan;
+header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.logo {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.logo img {
+  height: 100%;
 }
 
  .main-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: calc(100vh - 80px);
+  background-color:darkcyan;
  }
 
  .container {
   display: flex;
   flex-wrap: wrap;
+  width: 800px;
+  height: 800px;
  }
 
- .square {
+ .box {
   border: 2px solid black;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
  }
 
  .change {

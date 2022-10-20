@@ -1,31 +1,51 @@
 // WORK FLOW
+// 1.MAIN Prendo il bottone Start 
+btnStart = document.getElementById("start");
+// 2.MAIN Prendo l'elemento container
+container = document.querySelector(".container");
+// 3 MAIN .Sul bottone start Faccio un evento che al click avvia la funzione init e prende i valori che servono per la funzione, inoltre resetto il contenuto sempre al cick
+btnStart.addEventListener ("click", function() {
+  const elemPerRow = document.getElementById("level-game").value;
+  container.innerHTML = "";
+  init(elemPerRow);
+})
 
-// 1.Prendo il bottone Start 
-// 2.Sul bottone start Faccio un evento che al click avvia la funzione init
-// 3. faccio un event listner sullo square che al click chiama la funzione click square
+// FUNZIONE INIT
+// 1. assegno a totalBox l'elevazione al quadrato di elemperRow.
+// 2. Faccio un ciclo for dove i parte da zero ed arriva a totalBox. Nel ciclo metto la funzione che crea gli elementi Box
+function init(elNumb) {
+  const totalBox = Math.pow(elNumb, 2);
+  for (i = 0; i < totalBox; i++) {
+    createBox(i, elNumb)
+  }
+}
+
+// FUNZIONE CREATEBOX
+//  1. creo elemento div 
+//  2. assegno classe .box con classe name all'elemento
+//  3.  assegno dimensioni con la funzione calc
+//  4.  creo una proprietà customizzata dell'elemento a cui 
+//      assegno il valore che scrivo dentro: box.idElement = i+1
+//  5.  scrivo dentro all'elemento il numero che corrisponde al valore della
+//  6.   proprietà customizzata con box.innertext = box.idElement
+//  7.  appendo al container l'elemento
+function createBox (indexLoop, elNumb) {
+  elBox = document.createElement("div");
+  elBox.className = "box";
+  elBox.style.width = dimensionCalc(elNumb);
+  elBox.style.height = dimensionCalc(elNumb);
+  elBox.idElement = indexLoop + 1;
+  elBox.innerText = indexLoop + 1;
+  container.append(elBox);
+}
+
+function dimensionCalc(elNumb) {
+  return `calc(100% / ${elNumb})`;
+}
+
+// 4.MAIN faccio un event listner sullo square che al click richiama la funzione click box
   
-  
-//   funzioni da fare 
-//   1 init
-//     1. Prendo la value del bottone select con id level game 
-//     e la assegno a elemPerRow
-//     2. assegno a totalSquare l'elevazione al quadrato di elemperRow.
-//     3 Faccio un ciclo for dove i parte da zero ed arriva a totalsquare. Nel ciclo metto la funzione che crea gli elementi create square
-
-//   1 create square 
-//     crea elemento div 
-//     assegno classe .square con classe name 
-//     assegno dimensioni con la funzione calc
-//     square.idElement = i+1
-//     square.innertext = square.idElement
-//     scrivo dentro il div con innertext l'elemento i+1
-//     appendo al container l'elemento
-
-
-//   2 generalcalc
-//     assegna alla width ed heigh 100% / element per row
-
-//   3 click square
-//     aggiunge classe .change all'elemento square
-//     stampo in console il valore del numero interno ovvero console.log(this.idElement)
+// FUNZIONE CLICKBOX
+//     aggiunge classe .change all'elemento
+//     stampa in console il valore di idElement con console.log(this.idElement)
 
