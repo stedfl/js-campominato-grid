@@ -4,13 +4,17 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 header {
   height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .logo {
@@ -23,32 +27,40 @@ header {
   height: 100%;
 }
 
- .main-wrapper {
+ button, select, label {
+  padding: 5px 10px;
+  font-size: 1rem;
+}
+
+button {
+  margin-left: 1rem;
+}
+
+.main-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   height: calc(100vh - 80px);
   background-color:darkcyan;
- }
+}
 
- .container {
+.container {
   display: flex;
   flex-wrap: wrap;
   width: 800px;
   height: 800px;
- }
+}
 
- .box {
+.box {
   border: 2px solid black;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
- }
+}
 
- .change {
+.change {
   background-color: chocolate;
   color: white;
- }
-
+}
