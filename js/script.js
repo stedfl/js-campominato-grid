@@ -13,7 +13,7 @@ function init(elNumb) {
   }
 }
 
-function createBox (indexLoop, elNumb) {
+function createBox(indexLoop, elNumb) {
   elBox = document.createElement("div");
   elBox.className = "box";
   elBox.style.width = dimensionCalc(elNumb);
@@ -29,6 +29,6 @@ function dimensionCalc(elNumb) {
 }
 
 function clickBox(event){
-  console.log(this.idElement); 
+  console.log("Cella cliccata numero: " + this.idElement); 
   this.classList.add("change");
 }
