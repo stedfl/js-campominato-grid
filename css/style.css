@@ -3,3 +3,29 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color:darkcyan;
+}
+
+ .main-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+ }
+
+ .container {
+  display: flex;
+  flex-wrap: wrap;
+ }
+
+ .square {
+  border: 2px solid black;
+  cursor: pointer;
+ }
+
+ .change {
+  background-color: chocolate;
+ }
+
